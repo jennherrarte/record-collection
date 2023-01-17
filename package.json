@@ -1,0 +1,24 @@
+{
+  "name": "record-collection",
+  "version": "1.0.0",
+  "description": "sequelize demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jennherrarte/record-collection.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jennherrarte/record-collection/issues"
+  },
+  "homepage": "https://github.com/jennherrarte/record-collection#readme",
+  "dependencies": {
+    "mysql2": "^3.0.1",
+    "nodemon": "^2.0.20",
+    "sequelize": "^6.28.0"
+  }
+}
