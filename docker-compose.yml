@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  # Database (MySQL)
+  record_collection_db:
+    image: mysql:8.0
+    container_name: record_collection_db
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD="true"
+    volumes:
+      - ./conf/mysql/data:/docker-entrypoint-initdb.d
+    ports:
+      - '3307:3306'
+    command: '--default-authentication-plugin=mysql_native_password'
+    cap_add:
+      - SYS_NICE
+      
+ 
+    # networks: // research related to services
+    #   - pxl-tickets-backend 
+    #  networks:
+    #   pxl-tickets-backend:
+    #     driver: bridge
+
+    # research at docker compose - for local only
+    # rest api
+    # research setting user passwords
