@@ -12,15 +12,17 @@
     "username": "root",
     "password": null,
     "database": "record_collection_db",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "host": "localhost",
+    "dialect": "mysql",
+    "port": "3307"
   },
   "production": {
     "username": "root",
     "password": null,
     "database": "record_collection_db",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "host": "localhost",
+    "dialect": "mysql",
+    "port": "3307"
   }
 }
 

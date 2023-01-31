@@ -10,13 +10,14 @@ services:
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD="true"
     volumes:
-      - ./conf/mysql/data:/docker-entrypoint-initdb.d
+      - ./config/mysql/data:/docker-entrypoint-initdb.d
     ports:
       - '3307:3306'
     command: '--default-authentication-plugin=mysql_native_password'
     cap_add:
       - SYS_NICE
       
+    # only for docker local 
  
     # networks: // research related to services
     #   - pxl-tickets-backend 

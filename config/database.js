@@ -1,17 +1,16 @@
-const Sequelize = require('sequelize');
+const { Sequelize } = require('sequelize');
 
-//GET ENV VARIABLES FROM
-const sequelize = new Sequelize(
-    process.env.DB_NAME,
-    process.env.DB_USER,
-    process.env.DB_PASSWORD,
+const db = new Sequelize(
+    'record_collection_db',
+    'root',
+     '',
     {
-        host: process.env.DB_HOST,
-        dialect: 'mysql'
+        host: 'localhost',
+        dialect: 'mysql',
+        port: '3307'
     });
 
-module.exports = sequelize;
-
+module.exports = db;
 
 
 
