@@ -2,12 +2,12 @@ const models  = require('../db/models')
 const express = require('express');
 const router  = express.Router();
 
-const albumController = require('../controllers/album')
+const artistController = require('../controllers/artist')
 
-router.get('/', albumController.getAlbums)
- router.get('/:id', albumController.updateAlbum)
+router.get('/', artistController.getArtist)
+router.get('/:id', artistController.updateArtist)
 // router.post('/', userController.createUser)
-router.put('/:id', albumController.updateAlbum)
+router.put('/:id', artistController.updateArtist)
 // router.delete('/:id', userController.deleteUser)
 
 module.exports = router;

@@ -2,10 +2,10 @@
 
 const models = require('../db/models')
 
-class AlbumController {
+class ArtistController {
 
-// get albums
-    async getAlbums(req, res) {
+// get artists
+    async getArtists(req, res) {
         try {
             //var albumsResponse = []
             const albumsResponse = await models.Album.findAll()
@@ -19,7 +19,7 @@ class AlbumController {
         }
     }
 
-// get album by id
+// get artist by id
     async getAlbum(req, res) {
         try {
             const album = await models.Album.findByPk(req.params.id);
@@ -34,7 +34,7 @@ class AlbumController {
     }
 
 
-// update album 
+// update artist
     async updateAlbum(req, res) {
         try {
             const albumId = req.params.id;

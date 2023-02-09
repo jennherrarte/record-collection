@@ -25,7 +25,9 @@ db.authenticate().then(() => {
 console.log('sync')
 
 const app = express();
+app.use(express.json())
 app.use('/api/albums', routes.albums);
+app.use('/api/artists', routes.artists);
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
 app.use(cors("*"));

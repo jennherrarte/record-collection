@@ -2,7 +2,8 @@ const albums = require('./albums.js');
 
 const routes = {
     // RouteName
-    albums
+    albums,
+    artists
 }
 
 module.exports = routes
