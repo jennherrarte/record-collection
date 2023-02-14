@@ -4,8 +4,8 @@ const router  = express.Router();
 
 const artistController = require('../controllers/artist')
 
-router.get('/', artistController.getArtist)
-router.get('/:id', artistController.updateArtist)
+router.get('/', artistController.getArtists)
+router.get('/:id', artistController.getArtist)
 // router.post('/', userController.createUser)
 router.put('/:id', artistController.updateArtist)
 // router.delete('/:id', userController.deleteUser)

@@ -1,4 +1,5 @@
 const albums = require('./albums.js');
+const artists = require('./artists.js');
 
 const routes = {
     // RouteName

@@ -65,6 +65,30 @@ class AlbumController {
             return res.status(500).send(error.message);
         }
     };
+
+
+    async deleteAlbum(req, res) {
+        try {
+            const albumId = req.params.id;
+            const deleted = await models.Album.destroy({
+                where: {
+                    id: albumId
+                }
+            });
+            console.log(deleted)
+            if(deleted) {
+                return res.status(200);
+            }
+
+            throw new Error('Album not deleted');
+        } catch (error) {
+            return res.status(500).send(error.message);
+        }
+
+    };
+
+
+
 }
 
 

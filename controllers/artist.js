@@ -8,9 +8,9 @@ class ArtistController {
     async getArtists(req, res) {
         try {
             //var albumsResponse = []
-            const albumsResponse = await models.Album.findAll()
-            console.log(albumsResponse)
-            return res.status(200).json(albumsResponse)
+            const artistsResponse = await models.Artist.findAll()
+            console.log('response',artistsResponse)
+            return res.status(200).json(artistsResponse)
 
         } catch (error) {
             res.status(500).send({
@@ -20,10 +20,10 @@ class ArtistController {
     }
 
 // get artist by id
-    async getAlbum(req, res) {
+    async getArtist(req, res) {
         try {
-            const album = await models.Album.findByPk(req.params.id);
-            return res.status(200).json(album)
+            const artist = await models.Album.findByPk(req.params.id);
+            return res.status(200).json(artist)
 
         } catch (error) {
             console.log(error)
@@ -35,32 +35,30 @@ class ArtistController {
 
 
 // update artist
-    async updateAlbum(req, res) {
+    async updateArtist(req, res) {
         try {
-            const albumId = req.params.id;
-            const updated = await models.Album.update({
-                title: req.body.title,
-                genre: req.body.genre,
-                release_year: req.body.release_year
+            const artistId = req.params.id;
+            const updated = await models.Artist.update({
+                name: req.body.name,
             }, {
                 where: {
-                    id: albumId
+                    id: artistId
                 }
             });
 
             if (updated) {
-                const updatedAlbum = await models.Album.findOne({
+                const updatedArtist = await models.Artist.findOne({
                     where: {
-                        id: albumId
+                        id: artistId
                     }
                 });
                 return res.status(200).json({
-                    album: updatedAlbum
+                    artist: updatedArtist
                 });
             }
 
 
-            throw new Error('Album not found');
+            throw new Error('Artist not found');
         } catch (error) {
             return res.status(500).send(error.message);
         }
@@ -68,5 +66,5 @@ class ArtistController {
 }
 
 
-const albumController = new AlbumController();
-module.exports = albumController;
+const artistController = new ArtistController();
+module.exports = artistController;
